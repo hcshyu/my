@@ -1,0 +1,277 @@
+body, html {             
+    margin: 0;             
+    padding: 0;             
+    height: 100%;             
+    overflow: hidden;         
+}         
+
+#start-screen, #room {             
+    width: 100%;             
+    height: 100%;             
+    position: absolute;             
+    top: 0;             
+    left: 0;             
+    background-size: cover;             
+    background-position: center;             
+    display: flex;             
+    justify-content: center;             
+    align-items: center;         
+}         
+
+#start-screen {             
+    background-image: url('https://imgur.com/C11FrED.jpg');             
+    background-size: contain;             
+    background-repeat: no-repeat;             
+    background-position: center;             
+    z-index: 10;         
+}         
+
+#room {             
+    background-image: url('https://i.imgur.com/BZhDKC7.png');             
+    display: none;             
+    flex-direction: column;             
+    justify-content: flex-end;         
+} 
+
+#character {             
+    width: 150px;             
+    height: 300px;             
+    background-image: url('https://i.imgur.com/8k4i4cR.png');             
+    background-size: contain;             
+    background-repeat: no-repeat;             
+    position: absolute;             
+    right: 100px;             
+    bottom: -40px; 
+    display: none; /* 預設隱藏角色，直到進入 room 才顯示 */        
+}
+
+#doctor{
+    width: 150px;             
+    height: 300px;             
+    background-image: url('https://i.imgur.com/M0cwAvF.png');             
+    background-size: contain;             
+    background-repeat: no-repeat;             
+    position: absolute;             
+    right: 40px;             
+    bottom: 120px;         
+
+}
+
+#start-screen h1 {           
+    position: absolute; /* 使用絕對定位 */
+    bottom: 20px; /* 距離畫面下方 20px */
+    left: 50%; /* 水平置中 */
+    transform: translateX(-50%); /* 調整位置，使其真正置中 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 增加陰影效果 */
+    color: white;             
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);             
+    background-color: rgba(0, 0, 0, 0.5);             
+    padding: 20px;             
+    border-radius: 10px;         
+    
+}         
+
+#dialogue-box,
+#room-dialogue-box,
+#bathhouse-dialogue-box,
+#hospital-dialogue-box {
+    user-select: none; /* 禁用文本选择 */
+}
+
+
+#dialogue-box {             
+    width: 600px;             
+    height: 100px;             
+    background-color: rgba(0, 0, 0, 0.7);             
+    padding: 10px;             
+    box-sizing: border-box;             
+    font-family: Arial, sans-serif;             
+    color: white;             
+    display: flex;             
+    align-items: center;             
+    justify-content: center;         
+    border-radius: 10px;      
+    bottom: -40px; 
+
+}         
+
+#room-dialogue-box {             
+    width: 600px;             
+    height: 100px;             
+    background-color: rgba(0, 0, 0, 0.7);             
+    padding: 10px;             
+    box-sizing: border-box;             
+    font-family: Arial, sans-serif;             
+    color: white;             
+    display: none;             
+    align-items: center;             
+    justify-content: center;         
+    border-radius: 10px;      
+    bottom: -40px; 
+
+}         
+
+#bathhouse-dialogue-box {
+   
+        width: 80%; /* 調整寬度為 80% 或其他你需要的寬度 */
+        max-width: 600px; /* 設置最大寬度，根據需要調整 */
+        height: 100px;
+        background-color: rgba(0, 0, 0, 0.7); /* 背景顏色 */
+        color: white; /* 字體顏色 */
+        padding: 20px; /* 內邊距 */
+        box-sizing: border-box;
+        font-family: Arial, sans-serif; /* 字體樣式 */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute; /* 保證它在場景的上方 */
+        border-radius: 10px;      
+        bottom: 20px; /* 距離底部 20px */
+        left: 50%; /* 水平置中 */
+        transform: translateX(-50%); /* 調整位置使其真正置中 */
+    
+}
+#hospital-dialogue-box {
+    width: 100%;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.7); /* 背景顏色 */
+    color: white; /* 字體顏色 */
+    padding: 10px; /* 內邊距 */
+    box-sizing: border-box;
+    font-family: Arial, sans-serif; /* 字體樣式 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute; /* 保證它在場景的上方 */
+    border-radius: 10px;      
+    bottom: 0;
+    right: 100px;             
+
+}
+
+
+
+#map-screen {             
+    display: none;             
+    position: absolute;             
+    top: 0;             
+    left: 0;             
+    width: 100%;             
+    height: 100%;             
+    overflow: hidden;             
+    background-color: black;         
+}         
+
+#map {             
+    
+    width: 2000px; /* 恢復到原來大小 */
+    height: 2000px;             
+    background-image: url('https://i.imgur.com/PAco8uX.png'); /* 地圖圖片網址 */
+    background-size: contain; /* 根據地圖圖片尺寸進行調整 */
+    background-repeat: no-repeat;             
+    background-position: center; /* 將地圖置中顯示 */
+    position: absolute;             
+    top: 0;             
+    left: 0;         
+}         
+
+#map-character {             
+    width: 60px; /* 恢復到原來大小 */
+    height: 100px;             
+    object-fit: contain;             
+    background-image: url('https://i.imgur.com/9OjVk2B.gif');             
+    background-size: cover;             
+    position: absolute;             
+    top: 50%;             
+    left: 50%;             
+    transform: translate(-50%, -50%);         
+}
+
+#bathhouse {
+    background-image: url('https://i.imgur.com/mwQkDn8.png');
+    display: none; /* 初始状态为隐藏 */
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%; /* 宽度设置为100%，充满容器 */
+    height: 100%; /* 高度设置为100%，充满容器 */
+    position: absolute; /* 确保定位 */
+    top: 0; /* 位置设置为顶部 */
+    left: 0; /* 位置设置为左侧 */
+    background-size: contain; /* 图片保持比例缩放 */
+    background-repeat: no-repeat; /* 不重复图片 */
+    background-position: center; /* 背景居中显示 */
+}
+
+#bathhouse2 {
+    background-image: url('https://i.imgur.com/eEBXFPY.png');
+    display: none; /* 初始状态为隐藏 */
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%; /* 宽度设置为100%，充满容器 */
+    height: 100%; /* 高度设置为100%，充满容器 */
+    position: absolute; /* 确保定位 */
+    top: 0; /* 位置设置为顶部 */
+    left: 0; /* 位置设置为左侧 */
+    background-size: contain; /* 图片保持比例缩放 */
+    background-repeat: no-repeat; /* 不重复图片 */
+    background-position: center; /* 背景居中显示 */
+}
+
+/* 用于按钮容器的样式 */
+#choice-buttons {
+    display: none; /* 初始状态为隐藏 */
+    justify-content: center; /* 按钮居中 */
+    gap: 50px; /* 按钮之间的距离 */
+    margin-top: 20px; /* 距离对话框的间距 */
+    position: absolute; /* 绝对定位 */
+    top: 50%; /* 垂直居中 */
+    left: 50%; /* 水平居中 */
+    transform: translate(-50%, -50%); /* 居中 */
+    z-index: 10; /* 确保按钮位于顶层 */
+}
+
+/* 通用按钮样式 */
+button {
+    padding: 20px 40px; /* 按钮内边距 */
+    font-size: 20px; /* 按钮字体大小 */
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 增加阴影效果 */
+}
+
+/* 正确选项的按钮样式 */
+#choice1 {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#choice1:hover {
+    background-color: #45a049;
+}
+
+/* 错误选项的按钮样式 */
+#choice2 {
+    background-color: #f44336;
+    color: white;
+}
+
+#choice2:hover {
+    background-color: #da190b;
+}
+
+#hospital {
+    background-image: url('https://i.imgur.com/ZjmuVHK.png');
+    display: none; /* 初始狀態為隱藏 */
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%; /* 寬度設置為100%，充滿容器 */
+    height: 100%; /* 高度設置為100%，充滿容器 */
+    position: absolute; /* 確保定位 */
+    top: 0; /* 位置設置為頂部 */
+    left: 0; /* 位置設置為左側 */
+    background-size: contain; /* 圖片保持比例縮放 */
+    background-repeat: no-repeat; /* 不重複圖片 */
+    background-position: center; /* 背景居中顯示 */
+}
